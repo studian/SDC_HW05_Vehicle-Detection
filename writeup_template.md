@@ -67,6 +67,11 @@
 * Here are some typical examples of detections:
 ![alt text][image5]
 
+### My whole implemented Hog & SVM algorigm pipline is:
+![alt text][image4]
+
+---
+
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
