@@ -15,14 +15,17 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
-[video1]: ./project_video.mp4
+[image1]: ./out_imgaes/HOG_train_datasets.JPG
+[image2]: ./out_imgaes/HOG_train_datasets_detail.JPG
+[image3]: ./out_imgaes/HOG_features.JPG
+[image4]: ./out_imgaes/HOG_vehicle_detect_pipline1.JPG
+[image5]: ./out_imgaes/HOG_vehicle_detect_pipline2.JPG
+[image6]: ./out_imgaes/YoloModel.JPG
+[image7]: ./out_imgaes/YoloDetection.JPG
+
+[video1]: ./output_video/hog_svm_pipline.wmv
+[video2]: ./output_video/project_video_output_HOGSVM.mp4
+[video3]: ./output_video/project_video_output_Yolo.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
