@@ -69,6 +69,8 @@
 
 ### My whole implemented Hog & SVM algorigm pipline is:
 ![alt text][image4]
+* Here's a [link to my video (project_video) HOG & SVM pipline](./output_video/hog_svm_pipline.wmv)
+* Here's a [link to my video (project_video) result #1](./output_video/project_video_output_HOGSVM.mp4)
 
 ---
 
