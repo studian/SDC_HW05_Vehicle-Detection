@@ -15,13 +15,13 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./output_imgaes/HOG_train_datasets.JPG
-[image2]: ./output_imgaes/HOG_train_datasets_detail.JPG
-[image3]: ./output_imgaes/HOG_features.JPG
-[image4]: ./output_imgaes/HOG_vehicle_detect_pipline1.JPG
-[image5]: ./output_imgaes/HOG_vehicle_detect_pipline2.JPG
-[image6]: ./output_imgaes/YoloModel.JPG
-[image7]: ./output_imgaes/YoloDetection.JPG
+[image1]: ./output_images/HOG_train_datasets.JPG
+[image2]: ./output_images/HOG_train_datasets_detail.JPG
+[image3]: ./output_images/HOG_features.JPG
+[image4]: ./output_images/HOG_vehicle_detect_pipline1.JPG
+[image5]: ./output_images/HOG_vehicle_detect_pipline2.JPG
+[image6]: ./output_images/YoloModel.JPG
+[image7]: ./output_images/YoloDetection.JPG
 
 [video1]: ./output_video/hog_svm_pipline.wmv
 [video2]: ./output_video/project_video_output_HOGSVM.mp4
