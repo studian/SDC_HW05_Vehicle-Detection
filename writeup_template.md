@@ -19,15 +19,15 @@
 
 ### First, HOG & SVM algoritm is:
 * Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a Linear SVM classifier.
-* Color transform and binned color features, as well as histograms of color, to combine the HOG feature vector with other classical computer vision approaches
-* Sliding-window technique to search for cars with the trained SVM
+* Color transform and binned color features, as well as histograms of color, to combine the HOG feature vector with other classical computer vision approaches.
+* Sliding-window technique to search for cars with the trained SVM.
 * Creating a heatmap of recurring detections in subsequent framens of a video stream to reject outliers and follow detected vehicles.
 * Decribed in: VehicleDetectionByHOGSVM.ipynb
 * Decribed in: VehicleDetectionByHOGSVM.html
 
 ### Second, Yolo v1 algorithm is:
-* Use tiny-YOLO v1, since it's easy to implement
-* Use Keras to construct the YOLO model
+* Use tiny-YOLO v1, since it's easy to implement.
+* Use Keras to construct the YOLO model.
 * Decribed in: VehicleDetectionByYOLO.ipynb
 * Decribed in: VehicleDetectionByYOLO.html
 
@@ -43,19 +43,29 @@
 * Labeled images were taken from the GTI vehicle image database GTI.
 * All images are 64x64 pixels. 
 * Images of the GTI data set are taken from video sequences which needed to be addressed in the separation into training and test set. 
-* Shown below is an example of each class (vehicle, non-vehicle) of the data set.
+* Due to the temporal correlation in the video sequences, the training set was divided as follows: the first 70% of any folder containing images was assigned to be the training set, the next 20% the validation set and the last 10% the test set. 
 ![alt text][image1]
+* Shown below is an example of each class (vehicle, non-vehicle) of the data set.
+* In the process of generating HOG features all training, validation and test images were normalized together and subsequently split again into training, test and validation set. 
+* Each set was shuffled individually. 
 ![alt text][image2]
 
 ### Extraction of HOG, color and spatial features
-* Due to the temporal correlation in the video sequences, the training set was divided as follows: the first 70% of any folder containing images was assigned to be the training set, the next 20% the validation set and the last 10% the test set. 
-* In the process of generating HOG features all training, validation and test images were normalized together and subsequently split again into training, test and validation set. 
-* Each set was shuffled individually. 
-* I explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).
-* I selected a few images from each of the two classes and displayed them to see what the `skimage.hog()` output looks like. 
-* Here is an example using the HLS color space and HOG parameters of `orient=9`, `pixels_per_cell=(16, 16)` and `cells_per_block=(2, 2)`:
+* I experimented with a number of different combinations of color spaces and HOG parameters and trained a linear SVM using different combinations of HOG features extracted from the color channels. 
+* I trained a linear SVM using all channels of images converted to HLS space. 
+* I included spatial features color features as well as all three HLS channels, because using less than all three channels reduced the accuracy considerably. 
+* The final feature vector has a length of 6156 elements, most of which are HOG features. 
 ![alt text][image3]
 
+### Sliding window search
+* I segmented the image into 4 partially overlapping zones with different sliding window sizes to account for different distances. 
+* The window sizes are 240,180,120 and 70 pixels for each zone. 
+* Within each zone adjacent windows have an ovelap of 75%, as illustrated below. 
+* The search over all zones is implemented in the `search_all_scales(image)` function. 
+* Using even slightly less than 75% overlap resulted in an unacceptably large number of false negatives.
+* The false positives were filtered out by using a heatmap approach as described below. 
+* Here are some typical examples of detections:
+![alt text][image5]
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
