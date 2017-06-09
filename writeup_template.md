@@ -16,13 +16,14 @@
 # **Vehicle Detection Project**
 
 I implement vehicle detection using HOG & SVM and Yolo v1.
-First, HOG & SVM algoritm is:
+
+1. First, HOG & SVM algoritm is:
 * Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a Linear SVM classifier.
 * Color transform and binned color features, as well as histograms of color, to combine the HOG feature vector with other classical computer vision approaches
 * Sliding-window technique to search for cars with the trained SVM
 * Creating a heatmap of recurring detections in subsequent framens of a video stream to reject outliers and follow detected vehicles.
 
-Second, Yolo v1 algorithm is:
+2. Second, Yolo v1 algorithm is:
 * Use tiny-YOLO v1, since it's easy to implement
 * Use Keras to construct the YOLO model
 
