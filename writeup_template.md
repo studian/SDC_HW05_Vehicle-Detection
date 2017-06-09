@@ -22,14 +22,14 @@
 * Color transform and binned color features, as well as histograms of color, to combine the HOG feature vector with other classical computer vision approaches
 * Sliding-window technique to search for cars with the trained SVM
 * Creating a heatmap of recurring detections in subsequent framens of a video stream to reject outliers and follow detected vehicles.
+* Decribed in: VehicleDetectionByHOGSVM.ipynb
+* Decribed in: VehicleDetectionByHOGSVM.html
 
 ### Second, Yolo v1 algorithm is:
 * Use tiny-YOLO v1, since it's easy to implement
 * Use Keras to construct the YOLO model
-
-### My whole implemented algorigm pipline is decribed in:
-* 'VehicleDetectionByHOGSVM.ipynb' and 'VehicleDetectionByHOGSVM.html'
-* 'VehicleDetectionByYOLO.ipynb' and 'VehicleDetectionByYOLO.html'
+* Decribed in: VehicleDetectionByYOLO.ipynb
+* Decribed in: VehicleDetectionByYOLO.html
 
 ### The result videos of my whole implemented algorigm pipline is:
 * ./output_video/project_video_output_HOGSVM.mp4
