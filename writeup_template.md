@@ -70,7 +70,33 @@
 ### My whole implemented Hog & SVM algorigm pipline is:
 ![alt text][image4]
 * Here's a [link to my video (project_video) HOG & SVM pipline](./output_video/hog_svm_pipline.wmv)
-* Here's a [link to my video (project_video) result #1](./output_video/project_video_output_HOGSVM.mp4)
+* Here's a [link to my video (project_video) HOG & SVM result](./output_video/project_video_output_HOGSVM.mp4)
+
+---
+
+## 2. Yolo v1 based Vehicle Detection
+
+### The tiny YOLO v1
+* The tiny YOLO v1 is consist of 9 convolution layers and 3 full connected layers. 
+* Each convolution layer consists of convolution, leaky relu and max pooling operations. 
+* The first 9 convolution layers can be understood as the feature extractor, whereas the last three full connected layers can be understood as the "regression head" that predicts the bounding boxes.
+* There are a total of 45,089,374 parameters in the model.
+* The detail of the architecture is in list in this table:
+![alt text][image6]
+* The output of this network is a 1470 vector, which contains the information for the predicted bounding boxes. 
+* The 1470 vector output is divided into three parts, giving the probability, confidence and box coordinates. 
+* Each of these three parts is also further divided into 49 small regions, corresponding to the predictions at each cell. 
+* In postprocessing steps, I take this 1470 vector output from the network to generate the boxes that with a probability higher than a certain threshold. 
+* Training the YOLO network is time consuming. 
+* I will download the pretrained weights from [here](https://github.com/pjreddie/darknet/wiki/YOLO:-Real-Time-Object-Detection) and load them into our Keras model. 
+* The following shows the results for several test images with a threshold of 0.17. 
+* I can see that the vehicles are detected:
+![alt text][image7]
+
+
+### My whole implemented Yolo v1 algorigm pipline is:
+![alt text][image4]
+* Here's a [link to my video (project_video) Yolo result](./output_video/project_video_output_Yolo.mp4)
 
 ---
 
