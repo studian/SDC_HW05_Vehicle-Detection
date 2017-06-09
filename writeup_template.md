@@ -95,7 +95,6 @@
 
 
 ### My whole implemented Yolo v1 algorigm pipline is:
-![alt text][image4]
 * Here's a [link to my video (project_video) Yolo result](./output_video/project_video_output_Yolo.mp4)
 
 ---
