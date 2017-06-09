@@ -37,6 +37,26 @@
 
 ---
 
+## 1. HOG & SVM based Vehicle Detection
+
+### Data Exploration
+* Labeled images were taken from the GTI vehicle image database GTI.
+* All images are 64x64 pixels. 
+* Images of the GTI data set are taken from video sequences which needed to be addressed in the separation into training and test set. 
+* Shown below is an example of each class (vehicle, non-vehicle) of the data set.
+![alt text][image1]
+![alt text][image2]
+
+### Extraction of HOG, color and spatial features
+* Due to the temporal correlation in the video sequences, the training set was divided as follows: the first 70% of any folder containing images was assigned to be the training set, the next 20% the validation set and the last 10% the test set. 
+* In the process of generating HOG features all training, validation and test images were normalized together and subsequently split again into training, test and validation set. 
+* Each set was shuffled individually. 
+* I explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).
+* I selected a few images from each of the two classes and displayed them to see what the `skimage.hog()` output looks like. 
+* Here is an example using the HLS color space and HOG parameters of `orient=9`, `pixels_per_cell=(16, 16)` and `cells_per_block=(2, 2)`:
+![alt text][image3]
+
+
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -55,7 +75,7 @@ The code for this step is contained in the first code cell of the IPython notebo
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![alt text][image1]
+
 
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
